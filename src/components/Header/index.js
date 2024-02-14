@@ -6,7 +6,7 @@ import {FiHome, FiUser, FiSettings} from 'react-icons/fi'
 import avatarImg from '../../assets/avatar.png'
 import './header.css'
 
-export function Header(){
+export default function Header(){
 
     const { user } = useContext(AuthContext)
 
