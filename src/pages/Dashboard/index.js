@@ -51,7 +51,11 @@ const Dasboard = () => {
               <tr>
                 <td data-label='Cliente'>Mercado da esquina</td>
                 <td data-label='Assuntos'>Suporte</td>
-                <td data-label='Status'>Em aberto</td>
+                <td data-label='Status'>
+                  <span className="badge" style={{backgroundColor: '#999'}}>
+                   Em aberto
+                  </span>
+                </td>
                 <td data-label='Cadastrado'>12/05/2022</td>
                 <td data-label='#'>
                   <button className="action" style={{backgroundColor: '#3583f6'}}>
@@ -62,6 +66,27 @@ const Dasboard = () => {
                   </button>
                 </td>
               </tr>
+
+
+              <tr>
+                <td data-label='Cliente'>Informatica Tech</td>
+                <td data-label='Assuntos'>Suporte</td>
+                <td data-label='Status'>
+                  <span className="badge" style={{backgroundColor: '#999'}}>
+                    Em aberto
+                  </span>
+                </td>
+                <td data-label='Cadastrado'>12/05/2022</td>
+                <td data-label='#'>
+                  <button className="action" style={{backgroundColor: '#3583f6'}}>
+                    <FiSearch color="#FFF" size={17}/>
+                  </button>
+                  <button className="action" style={{backgroundColor: '#f6a935'}}>
+                    <FiEdit2 color="#FFF" size={17}/>
+                  </button>
+                </td>
+              </tr>
+
             </tbody>
           </table>
         </>
