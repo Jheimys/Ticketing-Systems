@@ -1,7 +1,7 @@
-import { useContext } from "react"
+//import { useContext } from "react"
 
 //--Contexts
-import { AuthContext } from "../../contexts/auth"
+//import { AuthContext } from "../../contexts/auth"
 
 //--Components
 import  Header  from "../../components/Header"
@@ -15,12 +15,12 @@ import { Link } from "react-router-dom"
 import './dasboard.css'
 
 
-const Dasboard = () => {
-  const {logout} = useContext(AuthContext)
+ const Dasboard = () => {
+//   const {logout} = useContext(AuthContext)
 
-  async function handleLogout(){
-    await logout()
-  }
+  // async function handleLogout(){
+  //   await logout()
+  // }
 
   return (
     <div>
