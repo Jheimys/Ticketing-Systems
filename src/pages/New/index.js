@@ -1,12 +1,23 @@
 import { useContext, useEffect, useState } from "react"
+
+//--- Components --- 
 import Header from "../../components/Header"
 import Title from "../../components/Title"
+
+//--- React Icons ---
 import { FiPlus } from "react-icons/fi"
 
-import './new.css'
-import { AuthContext } from "../../contexts/auth"
-import { collection, getDocs } from "firebase/firestore"
+//--- Firebase ------
+import { addDoc, collection, getDocs } from "firebase/firestore"
 import { db } from "../../services/firebaseConnection"
+
+// --- contexts ----
+import { AuthContext } from "../../contexts/auth"
+
+//--- Toast ----
+import { toast } from "react-toastify"
+
+import './new.css'
 
 export default function New(){
 
@@ -69,6 +80,30 @@ export default function New(){
         setCustomerSelected(e.target.value)
     }
 
+    async function handleRegister(e){
+        e.preventDefault()
+
+        //submit a ticket
+        await addDoc(collection(db, "LogTickets"), {
+            created: new Date(),
+            cliente: customers[customerSelected].nomeFantasia,
+            clienteId: customers[customerSelected].id,
+            assunto: assunto,
+            complemento: complemento,
+            status: status,
+            userId: user.uid
+        })
+        .then(() => {
+            toast.success('Chamado registrado!')
+            setCoplemento('')
+            setCustomerSelected(0)
+        })
+        .catch((error) => {
+            toast.error('Ops erro ao registrar, tente mais tarde!')
+            console.log(error)
+        })
+    }
+
     return(
         <div>
             <Header />
@@ -79,7 +114,7 @@ export default function New(){
                 </Title>
 
                 <div className="container">
-                    <form className="form-profile">
+                    <form className="form-profile" onSubmit={handleRegister}>
                         <label>Clientes</label>
                         {
                             loadCustomer ? (
