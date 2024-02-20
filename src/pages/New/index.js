@@ -1,5 +1,8 @@
 import { useContext, useEffect, useState } from "react"
 
+//--React Router Dom --
+import { useNavigate, useParams } from "react-router-dom"
+
 //--- Components --- 
 import Header from "../../components/Header"
 import Title from "../../components/Title"
@@ -8,7 +11,7 @@ import Title from "../../components/Title"
 import { FiPlus } from "react-icons/fi"
 
 //--- Firebase ------
-import { addDoc, collection, getDocs } from "firebase/firestore"
+import { addDoc, collection, doc, getDoc, getDocs, updateDoc } from "firebase/firestore"
 import { db } from "../../services/firebaseConnection"
 
 // --- contexts ----
@@ -24,8 +27,11 @@ export default function New(){
     const [ customers, setCustomers ] = useState([])
     const [ loadCustomer, setLoadCustomer ] = useState(true)
     const [ customerSelected, setCustomerSelected ] = useState(0)
+    const [ idCustomer, setIdCustomer ] = useState(false)
 
     const { user } = useContext(AuthContext)
+    const { id } = useParams()
+    const navigate = useNavigate()
 
     const [ complemento, setCoplemento ] = useState('')
     const [ assunto, setAssunto ] = useState('Suporte')
@@ -55,6 +61,10 @@ export default function New(){
 
                 setCustomers(lista)
                 setLoadCustomer(false)
+
+                if(id) {
+                    loadId(lista)
+                }
             })
             .catch((error) => {
                 console.log('ERRO AO BUSCAR CLIENTES', error)
@@ -65,7 +75,25 @@ export default function New(){
 
         loadCustomers()
 
-    }, [listRef])
+    }, [id])
+
+    async function loadId(lista){
+        const docRef = doc(db, "LogTickets", id)
+        await getDoc(docRef)
+        .then((snapshot) => {
+            setAssunto(snapshot.data().assunto)
+            setStatus(snapshot.data().status)
+            setCoplemento(snapshot.data().complemento)
+
+            let index = lista.findIndex(item => item.id === snapshot.data().clienteId)
+            setCustomerSelected(index)
+            setIdCustomer(true)
+        })
+        .catch((error) => {
+            console.log(error)
+            setIdCustomer(false)
+        })
+    }
 
     function handleOptionChange(e){
         setStatus(e.target.value)
@@ -82,6 +110,30 @@ export default function New(){
 
     async function handleRegister(e){
         e.preventDefault()
+
+        if(idCustomer){
+            const docRef = doc(db, "LogTickets", id)
+            await updateDoc(docRef, {
+                cliente: customers[customerSelected].nomeFantasia,
+                clienteId: customers[customerSelected].id,
+                assunto: assunto,
+                complemento: complemento,
+                status: status,
+                userId: user.uid
+            })
+            .then(() => {
+                toast.info("Chamado atualizado com sucesso!")
+                setCustomerSelected(0)
+                setCoplemento('')
+                navigate('/dashboard')
+            })
+            .catch((error) => {
+                toast.error('Ops, erro ao atualizar esse chamado!')
+                console.log(error)
+            })
+
+            return
+        }
 
         //submit a ticket
         await addDoc(collection(db, "LogTickets"), {
@@ -109,7 +161,7 @@ export default function New(){
             <Header />
 
             <div className="content">
-                <Title name="Novo chamado">
+                <Title name={id ? "Editando chamado" : "Novo chamado"}>
                     <FiPlus size={25}/>
                 </Title>
 
