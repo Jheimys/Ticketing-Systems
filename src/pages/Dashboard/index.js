@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 //--Components
 import  Header  from "../../components/Header"
 import Title from "../../components/Title"
+import Modal from "../../components/Modal"
 
 //-- React Icons
 import { FiEdit2, FiMessageSquare, FiPlus, FiSearch } from "react-icons/fi"
@@ -27,6 +28,9 @@ import './dasboard.css'
   const [ isEmpty, setIsEmpty ] = useState(false)
   const [ lastDocs, setLastDocs ] = useState()
   const [ loadingMore, setLoadingMore ] = useState(false)
+
+  const [ showPostModal, setShowPostModal ] = useState(false)
+  const [ detail, setDetail ] = useState()
 
   
   useEffect(() => {
@@ -87,6 +91,11 @@ import './dasboard.css'
     const querySnapshot = await getDocs(q)
     await updateState(querySnapshot)
     
+  }
+
+  function toogleModal(item){
+    setShowPostModal(!showPostModal)
+    setDetail(item)
   }
 
   if(loading){
@@ -159,7 +168,7 @@ import './dasboard.css'
                     </td>
                     <td data-label='Cadastrado'>{item.createdFormat}</td>
                     <td data-label='#'>
-                      <button className="action" style={{backgroundColor: '#3583f6'}}>
+                      <button className="action" style={{backgroundColor: '#3583f6'}} onClick={() => toogleModal(item)}>
                         <FiSearch color="#FFF" size={17}/>
                       </button>
                       <Link to={`/new/${item.id}`} className="action" style={{backgroundColor: '#f6a935'}}>
@@ -179,6 +188,12 @@ import './dasboard.css'
           )}
         </>
       </div>
+
+      {showPostModal && (
+        <Modal 
+          conteudo = {detail}
+          close={() => setShowPostModal(!showPostModal)}/>
+      )}
 
     </div>
   )
