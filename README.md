@@ -1,70 +1,78 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align=center>
+   <image width="70" heigth="70" src='https://github.com/Jheimys/assets/blob/master/logoSistema.png'>
+   <h1 align=center> Ticketing-Systems </h1> 
+</p>
 
-## Available Scripts
+# Welcome! 👋
 
-In the project directory, you can run:
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Jheimys/Electronic_battery/blob/master/LICENCE)
+![NPM](https://img.shields.io/website?url=https%3A%2F%2Fgithub.com%2FJheimys%2FOrgano_II%2Fedit%2Fmaster%2FREADME.m)
 
-### `npm start`
+Thank you for visiting and feel free!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I am always striving to improve my code. I would appreciate your feedback."
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 💡 Project Description
 
-### `npm test`
+The Corporate Ticketing System is a web application developed for companies looking to manage internal service requests such as technical support, technical visits, and financial matters. This project aims to provide a centralized platform to streamline communication and tracking of these requests, enhancing efficiency and transparency in the company's internal processes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <p align=center>
+    <image  src='https://github.com/Jheimys/assets/blob/master/suporte%20tecnico.png'>
+  </p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Project Status
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> :trophy: Completed::trophy:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Project Features
 
-### `npm run eject`
+:hammer:`Feature 1`: Registration and Authentication.
+Secure registration and authentication system using Firebase Authentication. Each user has their exclusive profile to manage their posts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align=center>
+  <image width="670" heigth="770" src='https://github.com/Jheimys/assets/blob/master/loginsistema-ezgif.com-speed.gif'>
+</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+:hammer: `Feature 2`: Posts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align=center>
+  <image width="670" heigth="770" src='https://github.com/Jheimys/assets/blob/master/BlogPost.gif'>
+</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+:hammer: `Feature 3`: Post Management and Advanced Search:
+Ability to create, view, edit, and delete posts intuitively. Real-time editing functionality using React.js and Firebase Realtime Database. Implemented an advanced search mechanism allowing users to find specific posts using relevant tags. The search is optimized to provide fast and accurate results.
 
-## Learn More
+<p align=center>
+  <image width="670" heigth="770" src='https://github.com/Jheimys/assets/blob/master/BlogDashboard.gif'>
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Technologies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+:heavy_check_mark: HTML
 
-### Code Splitting
+:heavy_check_mark:CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+:heavy_check_mark: JavaScript
 
-### Analyzing the Bundle Size
+:heavy_check_mark: React
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+:heavy_check_mark: Firebase
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Access to the project
 
-### Advanced Configuration
+:link: https://blog-jheimys.vercel.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Author
 
-### Deployment
+![img](https://github.com/Jheimys.png?size=100)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+James Bezerra Bassani
 
-### `npm run build` fails to minify
+:globe_with_meridians: [Linkedin](https://www.linkedin.com/in/jheimys/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Have fun building!** 🚀
+
+

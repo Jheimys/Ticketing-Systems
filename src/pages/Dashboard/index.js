@@ -160,7 +160,7 @@ import './dasboard.css'
                   return(
                     <tr key={index}>
                     <td data-label='Cliente'> {item.cliente} </td>
-                    <td data-label='Assuntos'> {item.suport} </td>
+                    <td data-label='Assuntos'> {item.assunto} </td>
                     <td data-label='Status'>
                       <span className="badge" style={{backgroundColor: item.status === 'Aberto' ? '#5cb85c' : '#999' }}>
                         {item.status}
