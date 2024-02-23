@@ -15,7 +15,7 @@ I am always striving to improve my code. I would appreciate your feedback."
 
 # 💡 Project Description
 
-The Corporate Ticketing System is a web application developed for companies looking to manage internal service requests such as technical support, technical visits, and financial matters. This project aims to provide a centralized platform to streamline communication and tracking of these requests, enhancing efficiency and transparency in the company's internal processes.
+The Ticketing System is a web application developed for companies looking to manage internal service requests such as technical support, technical visits, and financial matters. This project aims to provide a centralized platform to streamline communication and tracking of these requests, enhancing efficiency and transparency in the company's internal processes.
 
   <p align=center>
     <image  src='https://github.com/Jheimys/assets/blob/master/suporte%20tecnico.png'>
@@ -29,25 +29,28 @@ The Corporate Ticketing System is a web application developed for companies look
 # Project Features
 
 :hammer:`Feature 1`: Registration and Authentication.
-Secure registration and authentication system using Firebase Authentication. Each user has their exclusive profile to manage their posts
+Secure registration and authentication system using Firebase Authentication. 
 
 <p align=center>
-  <image width="670" heigth="770" src='https://github.com/Jheimys/assets/blob/master/loginsistema-ezgif.com-speed.gif'>
+  <image  src='https://github.com/Jheimys/assets/blob/master/loginsistema-ezgif.com-speed.gif'>
 </p>
 
-:hammer: `Feature 2`: Posts
+:hammer: `Feature 2`: Customer database
 
 <p align=center>
-  <image width="670" heigth="770" src='https://github.com/Jheimys/assets/blob/master/BlogPost.gif'>
+  <image  src='https://github.com/Jheimys/assets/blob/master/customer%20database.png'>
 </p>
 
-:hammer: `Feature 3`: Post Management and Advanced Search:
-Ability to create, view, edit, and delete posts intuitively. Real-time editing functionality using React.js and Firebase Realtime Database. Implemented an advanced search mechanism allowing users to find specific posts using relevant tags. The search is optimized to provide fast and accurate results.
+:hammer: `Feature 3`: Service ticket screen:
+ <p align=center>
+    <image  src='https://github.com/Jheimys/assets/blob/master/suporte%20tecnico.png'>
+  </p>
+
+:hammer: `Feature 4`: Create a new ticket, edit, and view details:
 
 <p align=center>
-  <image width="670" heigth="770" src='https://github.com/Jheimys/assets/blob/master/BlogDashboard.gif'>
-</p>
-
+    <image  src='https://github.com/Jheimys/assets/blob/master/novo%20chamado.png'>
+  </p>
 # Technologies:
 
 :heavy_check_mark: HTML
@@ -63,7 +66,7 @@ Ability to create, view, edit, and delete posts intuitively. Real-time editing f
 
 # Access to the project
 
-:link: https://blog-jheimys.vercel.app/
+:link: ticketing-systems.vercel.app
 
 ## Author
 
